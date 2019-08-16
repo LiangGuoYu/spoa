@@ -8,9 +8,10 @@
 #include <algorithm>
 #include <limits>
 
-extern "C" {
-    #include <immintrin.h> // AVX2 and lower
-}
+#include "sse2neon.h"
+//extern "C" {
+//    #include <immintrin.h> // AVX2 and lower
+//}
 
 #include "spoa/graph.hpp"
 #include "simd_alignment_engine.hpp"
