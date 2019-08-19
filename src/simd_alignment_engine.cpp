@@ -8,9 +8,17 @@
 #include <algorithm>
 #include <limits>
 
+#ifdef __x86_64__
 extern "C" {
-    #include <immintrin.h> // AVX2 and lower
+    #include <immintrin.h>
 }
+#ifdef __aarch64__
+    #include "sse2neon.h"
+#endif
+
+//extern "C" {
+//    #include <immintrin.h> // AVX2 and lower
+//}
 
 #include "spoa/graph.hpp"
 #include "simd_alignment_engine.hpp"
